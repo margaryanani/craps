@@ -21,37 +21,23 @@ while game:
     dice_1 = random.randint(1, 6)
     dice_2 = random.randint(1, 6)
     sum = dice_1 + dice_2
-    first_roll = input('Press Enter to roll the dice. ')
-    print(sum)
+    input('Press Enter to roll the dice. ')
+    print(f'{dice_1} + {dice_2} = {sum}')
+
     if sum in [7, 11]:
         print('You win!')
-        print(""" If you want to play again press 'Enter', 
-if not press 'Esc' to exit the game. """)
-        key = keyboard.read_key()
-        print(key)
-        if key == 'Enter':
-            game = True
-        elif key == 'Esc':
-            game = False
-            print('Thanks for playing.')
     elif sum in [2, 3, 12]:
         print('Craps. You lost!')
-        print(""" If you want to play again press 'Enter', 
-        if not press 'Esc' to exit the game. """)
+
+    print("""If you want to play again press 'Enter', 
+If not, press 'Esc' to exit the game.""")
+
+    while True:
         key = keyboard.read_key()
-        print(key)
-        if key == 'Enter':
+        if key == 'enter':
             game = True
-        elif key == 'Esc':
+            break
+        elif key == 'esc':
             print('Thanks for playing.')
             game = False
-
-
-
-
-
-
-
-
-
-
+            break
