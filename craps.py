@@ -20,24 +20,36 @@ game = True
 while game:
     dice_1 = random.randint(1, 6)
     dice_2 = random.randint(1, 6)
-    sum = dice_1 + dice_2
+    sum_1 = dice_1 + dice_2
     input('Press Enter to roll the dice. ')
-    print(f'{dice_1} + {dice_2} = {sum}')
+    print(f'{dice_1} + {dice_2} = {sum_1}')
 
-    if sum in [7, 11]:
+    if sum_1 in [7, 11]:
         print('You win!')
-    elif sum in [2, 3, 12]:
+    elif sum_1 in [2, 3, 12]:
         print('Craps. You lost!')
-
-    print("""If you want to play again press 'Enter', 
-If not, press 'Esc' to exit the game.""")
-
-    while True:
-        key = keyboard.read_key()
-        if key == 'enter':
-            game = True
-            break
-        elif key == 'esc':
-            print('Thanks for playing.')
-            game = False
-            break
+    elif sum_1 in [4, 5, 6, 8, 9, 10]:
+        print("Goal!")
+        input("Press 'Enter' to roll the dice again.")
+        dice_1 = random.randint(1, 6)
+        dice_2 = random.randint(1, 6)
+        sum_2 = dice_1 + dice_2
+        print(f'{dice_1} + {dice_2} = {sum_2}')
+        while sum_2 != 7:
+            input("Press 'Enter' to roll the dice again.")
+            dice_1 = random.randint(1, 6)
+            dice_2 = random.randint(1, 6)
+            sum_2 = dice_1 + dice_2
+            print(f'{dice_1} + {dice_2} = {sum_2}')
+            if sum_2 == 7:
+                print('You lose!')
+                break
+            elif sum_2 == sum_1:
+                print('You win!')
+                break
+    print('do you want to play again?')
+    answer = input("If you want to continue Enter 'yes', if not, enter 'no' ")
+    if answer == 'yes':
+        game = True
+    elif answer == 'no':
+        game = False
