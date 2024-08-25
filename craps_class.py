@@ -8,6 +8,7 @@ class Craps:
         self.goal = None
 
     def dice_roll(self):
+        """Rolls the dice"""
         dice_1 = random.randint(1, 6)
         dice_2 = random.randint(1, 6)
         roll = dice_1 + dice_2
@@ -15,6 +16,7 @@ class Craps:
         return roll
 
     def place_bet(self):
+        """Places the bet on the board"""
         while True:
             try:
                 bet = int(input("Place your bet: "))
@@ -30,6 +32,7 @@ Your balance is ${self.balance}""")
                 print("Invalid input. Enter a valid number(int).")
 
     def game(self):
+        """Determines the outcome of the first roll"""
         while not self.game_over:
             bet = self.place_bet()
             roll = self.dice_roll()
@@ -48,6 +51,7 @@ Your balance is ${self.balance}""")
                 self.roll_till_goal_or_seven(bet)
 
     def roll_till_goal_or_seven(self, bet):
+        """Rolls the dice until the goal or 7"""
         while not self.game_over:
             input('Press enter to roll again. ')
             roll = self.dice_roll()
@@ -61,19 +65,20 @@ Your balance is ${self.balance}""")
                 self.game_over = True
 
     def play(self):
+        """Plays the game"""
         input("""
 WELCOME TO CRAPS!
 
 The rules of the game:
 
-The player should roll two dice. If the sum of both of them is
-7 or 11 the player wins. If the sum is 2, 3 or 12 (craps) the 
-casino wins. If during the first roll the sum is 4, 5, 6, 8,
-9 or 10, that number becomes the “goal” number. To win, the player
-should roll the dice till they roll the goal number again. If the 
-player rolls a 7 before rolling the goal number, they lose.
-
-Your balance will be $100. Before rolling the dice you'll make a bet.
+You will start off the game with a balance of $100.
+First you will make a bet, then you will roll 2 dice.
+If the sum of both of them is 7 or 11 you win.
+If the sum is 2, 3 or 12 (craps) the casino wins.
+If during the first roll the sum is 4, 5, 6, 8, 9 or 10, that number
+becomes the “goal” number. To win, you have to roll the dice till
+you roll the goal number again. If you roll a 7 before rolling
+the goal number, you lose.
 
 Press Enter to start the game.
 """)
