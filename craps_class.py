@@ -88,14 +88,9 @@ Press Enter to start the game.
                         self.game_over = False
                         break
                     elif answer == "no":
-                        self.game_over = True
-                        break
+                        print("Thank you for playing!")
+                        return
                     else:
                         print("Invalid input. Enter yes or no.")
             else:
                 print("You don't have enough money.")
-
-
-if __name__ == "__main__":
-    game = Craps()
-    game.play()
