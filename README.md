@@ -13,4 +13,10 @@ A classic game of craps with a betting system.
   - Make sure that you have Git installed on your computer.
   - Open a terminal.
   - Navigate to the directory where you want to clone the repository.
-  - Run this command. ` git clone https://github.com/margaryanani/craps.git`
+  - Run this command. `git clone https://github.com/margaryanani/craps.git`
+ 
+## Usage
+
+For this project you need 'craps_class.py' and 'craps.py' to run the game. The 'craps_class.py' contains a class with its functions and 'craps.py' is used to execute the game. After downloading both files run the 'craps.py' file and the game will start.
+
+
