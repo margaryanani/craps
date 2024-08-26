@@ -8,7 +8,7 @@ class Craps:
         self.goal = None
 
     def dice_roll(self):
-        """Rolls the dice"""
+        """Rolls the dice and returns the sum."""
         dice_1 = random.randint(1, 6)
         dice_2 = random.randint(1, 6)
         roll = dice_1 + dice_2
@@ -16,7 +16,7 @@ class Craps:
         return roll
 
     def place_bet(self):
-        """Places the bet on the board"""
+        """Places the bet on the board and tracks for valid input."""
         while True:
             try:
                 bet = int(input("Place your bet: "))
@@ -65,7 +65,8 @@ Your balance is ${self.balance}""")
                 self.game_over = True
 
     def play(self):
-        """Plays the game"""
+        """Plays the game, checks the balance, asks the user whether
+         they want to play again."""
         input("""
 WELCOME TO CRAPS!
 
